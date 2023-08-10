@@ -47,7 +47,7 @@ This has some advantages:
 
 <h3>How does keyboard input work? (Keyboard Matrix)</h3>
 My keyboard has 61 keys, but out of it comes a ribbon with only 17 cables. How is it possible? Click the following link to see a detailed explanation about it.
-[enter link description here](https://pcbheaven.com/wikipages/How_Key_Matrices_Works/)
+https://pcbheaven.com/wikipages/How_Key_Matrices_Works/
 
 TLDR: To save money on cables and pins, music keyboards but also typing keyboards use a matrix, where each key is controlled by a combination of a column and a row. This way, the number of keys increases exponentially to the cables instead of linearly. Example: With 10 cables, we could power up to 25 (5²) Keys.
 
@@ -60,9 +60,8 @@ At first, it was difficult to relate which key related to each cable combination
 
 <h3>Wiring Diagram</h3>
 I made the wiring diagram based on the sources listed below, and I adapted it to my keyboard. I ran out of digital pins and used some analogue ones too. I could also have inverted the polarity, so instead of controlling the 6 row lines with the shift register and reading from the 11 column pins, 2 shift registers would control the 11 column lines and Arduino will read the input from the 6 row pins. But that would have needed a second shift register using it as a slave, which didn't have at my reach
-![WahrerSch![WahrerSchaltung2](https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/1003a36b-5ce7-493c-b024-ac30709aaa46)
-altung1](https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/6b2ad6de-3cab-4c0e-9009-c9ff9cf57560)
-
+![WahrerSchaltung1](https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/6b2ad6de-3cab-4c0e-9009-c9ff9cf57560)
+![WahrerSchaltung2](https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/1003a36b-5ce7-493c-b024-ac30709aaa46)
 ![Circuit](https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/c9f3b4ff-cec1-49a4-a829-2ac3a03bbc64)
 
 
@@ -88,13 +87,19 @@ The code, as the wiring, is "deeply inspired" from other enthusiasts. Still, I m
 You can access my code in the repo files, the basic version and also the version that fixes the problems of the next chapter
 
 It works!
-https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/c3a0a76d-cdbc-47e8-93de-aca9029493b8
+
+https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/59fc0676-3079-492f-b0e9-bdee59b5e558
+
+
 
 
 
 <h2> Custom Fixes </h2>
 When I started playing, I found out that something was wrong with the keys...<br>
-https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/80e4ca70-bd10-4f4c-ba93-9990dd6569f0
+
+
+https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/ac5e1b9f-aa3d-494b-8c6c-6d5e40090557
+
 
 <h3>Contact Fault</h3>
 In 2 keys, I had the problem that when pressed, it would go on and off. That meant that the keyboard, instead of sending the note one time, it sent it multiple times, and made it sound horrible.
@@ -132,7 +137,10 @@ else  if  (rowValue[rowCtr] == 0 && keyPressed[rowCtr][colCtr])  {
 ```
 This is how it sounds with this fix, but there is another problem that I'll address in the next chapter...
 
-https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/9e23fce4-756f-48e1-84f0-2435c6c97f65
+
+https://github.com/Turdetano/arduino-midi-usb-keyboard/assets/113845085/19746de3-efc1-4070-abcf-0eee19fe7710
+
+
 
 
 <h3>Pressing a key also activates others</h3>
